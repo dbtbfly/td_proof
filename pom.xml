@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.db.td</groupId>
+    <artifactId>td-proof</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <modules>
+        <module>td-common</module>
+        <module>td-main</module>
+        <module>td-core</module>
+        <module>td-sdk</module>
+    </modules>
+
+    <name>BOM项目</name>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- 插件 -->
+        <maven.compiler.version>3.8.1</maven.compiler.version>
+        <!--plugin -->
+        <project.mvn.surefire.plugin.version>3.0.0-M4</project.mvn.surefire.plugin.version>
+        <project.mvn.compiler.plugin.version>3.8.1</project.mvn.compiler.plugin.version>
+        <project.mvn.source.plugin.version>3.2.1</project.mvn.source.plugin.version>
+        <project.mvn.assembly.plugin.version>3.2.0</project.mvn.assembly.plugin.version>
+        <project.mvn.resources.plugin.version>3.1.0</project.mvn.resources.plugin.version>
+        <project.mvn.javadoc.plugin.version>3.1.0</project.mvn.javadoc.plugin.version>
+        <project.mvn.frontend.maven.plugin.version>1.9.1</project.mvn.frontend.maven.plugin.version>
+        <project.mvn.maven.clean.plugin.version>3.1.0</project.mvn.maven.clean.plugin.version>
+
+
+        <!-- spring boot version -->
+        <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
+        <mybatis.spring.boot.version>2.1.2</mybatis.spring.boot.version>
+        <mybatis.plus.boot.version>3.3.1</mybatis.plus.boot.version>
+        <!-- jar 版本 -->
+        <spring.boot.version>2.2.5.RELEASE</spring.boot.version>
+        <mybatis.plus.boot.version>3.3.1</mybatis.plus.boot.version>
+
+        <lombok.version>1.18.12</lombok.version>
+        <slf4j.version>1.7.30</slf4j.version>
+        <log4j2.version>2.11.2</log4j2.version>
+        <org.mapstruct.version>1.3.1.Final</org.mapstruct.version>
+        <mysql.version>5.1.48</mysql.version>
+        <perf4j.version>0.9.16</perf4j.version>
+        <h2.version>1.4.200</h2.version>
+        <junit.version>4.12</junit.version>
+        <hamcrest.version>2.2</hamcrest.version>
+        <guava.version>28.2-jre</guava.version>
+        <fastjson.version>1.2.70</fastjson.version>
+        <commons-io.version>2.6</commons-io.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${org.mapstruct.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.perf4j</groupId>
+                <artifactId>perf4j</artifactId>
+                <version>${perf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>hamcrest</artifactId>
+                <version>${hamcrest.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven.compiler.version}</version>
+                    <configuration>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                            <path>
+                                <groupId>org.mapstruct</groupId>
+                                <artifactId>mapstruct-processor</artifactId>
+                                <version>${org.mapstruct.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${project.mvn.surefire.plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.surefire</groupId>
+                            <artifactId>surefire-junit47</artifactId>
+                            <version>${project.mvn.surefire.plugin.version}</version>
+                        </dependency>
+                    </dependencies>
+                                    <configuration>
+                                        <skipTests>true</skipTests>
+                                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+</project>
+
